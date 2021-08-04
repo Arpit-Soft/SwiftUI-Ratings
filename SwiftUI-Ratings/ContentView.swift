@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var rating: Int?
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            RatingView(rating: $rating)
+            Text(rating != nil ? "Star Rating is \(rating!)" : "")
+                .padding()
+        }
     }
 }
 
